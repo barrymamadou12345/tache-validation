@@ -92,5 +92,4 @@ function deleteUser(index) {//Supprimer un Utilisateur
   users.splice(index, 1);
   localStorage.setItem('open', JSON.stringify(users));// localStorage
   affichageUser();
-  document.location.reload();
 }
