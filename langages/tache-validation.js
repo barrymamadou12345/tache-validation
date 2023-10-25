@@ -28,20 +28,20 @@ function resetForm() { //Effacer le Formulaire
 function affichageUser() { //Afficher la liste des utilisateurs
   userList.innerHTML = "";
   let titre = document.querySelector('#tr1');
-  titre.classList.add('tr2')
+  //titre.classList.add('tr2')
   
   users.forEach((user, index) => {
-    listItem = document.createElement('div');
+    listItem = document.createElement('tr');
     nom1 = ` ${user.prenom}`;
     nom2 = ` ${user.nom}`;
     nom3 = ` ${user.email}`;
     nom4 = ` ${user.phone}`;
-    nom5 = ` <button onclick="editUser(${index})">Modifier</button>`;
-    nom6 = ` <div class="bouton2" onclick="deleteUser(${index})">Supprimer</div>`;
+    nom5 = `<td> <button onclick="editUser(${index})">Modifier</button> </td> `;
+    nom6 = `<td>  <div class="bouton2" onclick="deleteUser(${index})">Supprimer</div> </td> `;
 
     listItem.innerHTML = ` 
-      <div class="prenom">${nom1}</div> <div class="nom">${nom2}</div> 
-      <div class="email">${nom3}</div> <div class="phone">${nom4}</div> ${nom5} ${nom6} 
+      <td class="prenom">${nom1}</td> <td class="nom">${nom2}</td> 
+      <td class="email">${nom3}</td> <td class="phone">${nom4}</td> ${nom5} ${nom6} 
     `;
     listItem.classList.add('style');
     userList.appendChild(listItem);
